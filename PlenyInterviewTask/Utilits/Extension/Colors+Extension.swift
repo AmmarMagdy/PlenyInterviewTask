@@ -20,4 +20,12 @@ extension Color {
     static func lightGray() -> Color {
         Color("lightGray")
     }
+    
+    static func white() -> Color {
+        Color("white")
+    }
+    
+    static func borderColor() -> Color {
+        Color("borderColor")
+    }
 }

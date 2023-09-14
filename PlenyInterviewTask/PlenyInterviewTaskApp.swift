@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct PlenyInterviewTaskApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            LoginView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
