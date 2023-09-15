@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9B8E427E238EB2D189631424 /* Pods_PlenyInterviewTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C77C895374D8AD38287C658 /* Pods_PlenyInterviewTask.framework */; };
 		A04AE14D2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE14C2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift */; };
-		A04AE14F2AB2FB9F00138A2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE14E2AB2FB9F00138A2B /* ContentView.swift */; };
 		A04AE1512AB2FBA100138A2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04AE1502AB2FBA100138A2B /* Assets.xcassets */; };
 		A04AE1542AB2FBA100138A2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04AE1532AB2FBA100138A2B /* Preview Assets.xcassets */; };
 		A04AE1562AB2FBA100138A2B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1552AB2FBA100138A2B /* Persistence.swift */; };
@@ -22,6 +21,17 @@
 		A04AE1722AB327E200138A2B /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1712AB327E200138A2B /* Colors+Extension.swift */; };
 		A04AE1752AB3472D00138A2B /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1742AB3472D00138A2B /* CustomInputView.swift */; };
 		A04AE1772AB36A5800138A2B /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1762AB36A5800138A2B /* SecureInputView.swift */; };
+		A04AE17E2AB381FF00138A2B /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE17D2AB381FF00138A2B /* LoginRepository.swift */; };
+		A04AE1802AB3828F00138A2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE17F2AB3828F00138A2B /* User.swift */; };
+		A04AE1832AB486C400138A2B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1822AB486C400138A2B /* LoginService.swift */; };
+		A04AE1862AB493BE00138A2B /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1852AB493BE00138A2B /* DependencyInjector.swift */; };
+		A04AE18A2AB496C600138A2B /* ServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1892AB496C600138A2B /* ServicesContainer.swift */; };
+		A04AE19A2AB4A52600138A2B /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1992AB4A52600138A2B /* AppEnvironment.swift */; };
+		A04AE19E2AB4A9C200138A2B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE19C2AB4A9C200138A2B /* APIManager.swift */; };
+		A04AE1A52AB4A9DC00138A2B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1A22AB4A9DC00138A2B /* Endpoint.swift */; };
+		A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */; };
+		A04AE1AC2AB4E0DE00138A2B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */; };
+		A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1B12AB5029600138A2B /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +40,6 @@
 		5C77C895374D8AD38287C658 /* Pods_PlenyInterviewTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlenyInterviewTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlenyInterviewTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04AE14C2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlenyInterviewTaskApp.swift; sourceTree = "<group>"; };
-		A04AE14E2AB2FB9F00138A2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A04AE1502AB2FBA100138A2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A04AE1532AB2FBA100138A2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A04AE1552AB2FBA100138A2B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -39,11 +48,22 @@
 		A04AE1672AB320B200138A2B /* SFPRODISPLAYMEDIUM.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYMEDIUM.OTF; sourceTree = "<group>"; };
 		A04AE1682AB320B200138A2B /* SFPRODISPLAYBOLD.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBOLD.OTF; sourceTree = "<group>"; };
 		A04AE1692AB320B200138A2B /* SFPRODISPLAYREGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYREGULAR.OTF; sourceTree = "<group>"; };
-		A04AE16A2AB3233900138A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A04AE16A2AB3233900138A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04AE16F2AB3274000138A2B /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
 		A04AE1712AB327E200138A2B /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
 		A04AE1742AB3472D00138A2B /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		A04AE1762AB36A5800138A2B /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		A04AE17D2AB381FF00138A2B /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		A04AE17F2AB3828F00138A2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A04AE1822AB486C400138A2B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A04AE1852AB493BE00138A2B /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		A04AE1892AB496C600138A2B /* ServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesContainer.swift; sourceTree = "<group>"; };
+		A04AE1992AB4A52600138A2B /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		A04AE19C2AB4A9C200138A2B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A04AE1A22AB4A9DC00138A2B /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A04AE1B12AB5029600138A2B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,14 +108,16 @@
 		A04AE14B2AB2FB9F00138A2B /* PlenyInterviewTask */ = {
 			isa = PBXGroup;
 			children = (
-				A04AE16A2AB3233900138A2B /* Info.plist */,
-				A04AE1632AB31ED800138A2B /* Utilits */,
-				A04AE15F2AB315DB00138A2B /* Modules */,
+				A04AE1AA2AB4B7D200138A2B /* Gateways */,
+				A04AE1982AB4A51400138A2B /* System */,
+				A04AE1632AB31ED800138A2B /* Utilities */,
+				A04AE1842AB493A200138A2B /* Injected */,
+				A04AE17C2AB3787E00138A2B /* Repositories */,
+				A04AE1812AB4828200138A2B /* Services */,
+				A04AE17A2AB3785500138A2B /* Models */,
+				A04AE15F2AB315DB00138A2B /* UI */,
+				A04AE1792AB3782700138A2B /* Resources */,
 				A04AE14C2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift */,
-				A04AE14E2AB2FB9F00138A2B /* ContentView.swift */,
-				A04AE1502AB2FBA100138A2B /* Assets.xcassets */,
-				A04AE1552AB2FBA100138A2B /* Persistence.swift */,
-				A04AE1572AB2FBA100138A2B /* PlenyInterviewTask.xcdatamodeld */,
 				A04AE1522AB2FBA100138A2B /* Preview Content */,
 			);
 			path = PlenyInterviewTask;
@@ -109,29 +131,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A04AE15F2AB315DB00138A2B /* Modules */ = {
+		A04AE15F2AB315DB00138A2B /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				A04AE1602AB315E500138A2B /* Login */,
 			);
-			path = Modules;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		A04AE1602AB315E500138A2B /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				A04AE1612AB315FF00138A2B /* LoginView.swift */,
+				A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		A04AE1632AB31ED800138A2B /* Utilits */ = {
+		A04AE1632AB31ED800138A2B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				A04AE1732AB3470B00138A2B /* Theme */,
 				A04AE16E2AB3272900138A2B /* Extension */,
 			);
-			path = Utilits;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A04AE1642AB31F1D00138A2B /* Fonts */ = {
@@ -159,8 +182,95 @@
 				A04AE1642AB31F1D00138A2B /* Fonts */,
 				A04AE1742AB3472D00138A2B /* CustomInputView.swift */,
 				A04AE1762AB36A5800138A2B /* SecureInputView.swift */,
+				A04AE1B12AB5029600138A2B /* ErrorView.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		A04AE1782AB3780300138A2B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1552AB2FBA100138A2B /* Persistence.swift */,
+				A04AE1572AB2FBA100138A2B /* PlenyInterviewTask.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		A04AE1792AB3782700138A2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE16A2AB3233900138A2B /* Info.plist */,
+				A04AE1502AB2FBA100138A2B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A04AE17A2AB3785500138A2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE17F2AB3828F00138A2B /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A04AE17C2AB3787E00138A2B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE17D2AB381FF00138A2B /* LoginRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A04AE1812AB4828200138A2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1822AB486C400138A2B /* LoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A04AE1842AB493A200138A2B /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1852AB493BE00138A2B /* DependencyInjector.swift */,
+				A04AE1892AB496C600138A2B /* ServicesContainer.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
+		A04AE18B2AB497E400138A2B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */,
+				A04AE1A22AB4A9DC00138A2B /* Endpoint.swift */,
+				A04AE19B2AB4A9B800138A2B /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A04AE1982AB4A51400138A2B /* System */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1992AB4A52600138A2B /* AppEnvironment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		A04AE19B2AB4A9B800138A2B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE19C2AB4A9C200138A2B /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A04AE1AA2AB4B7D200138A2B /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				A04AE1782AB3780300138A2B /* Persistence */,
+				A04AE18B2AB497E400138A2B /* Network */,
+			);
+			path = Gateways;
 			sourceTree = "<group>";
 		};
 		C1199DA0B043B3D78A95ACC1 /* Frameworks */ = {
@@ -188,6 +298,8 @@
 			dependencies = (
 			);
 			name = PlenyInterviewTask;
+			packageProductDependencies = (
+			);
 			productName = PlenyInterviewTask;
 			productReference = A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +328,8 @@
 				Base,
 			);
 			mainGroup = A04AE1402AB2FB9F00138A2B;
+			packageReferences = (
+			);
 			productRefGroup = A04AE14A2AB2FB9F00138A2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,14 +385,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04AE1772AB36A5800138A2B /* SecureInputView.swift in Sources */,
+				A04AE1A52AB4A9DC00138A2B /* Endpoint.swift in Sources */,
+				A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */,
 				A04AE1562AB2FBA100138A2B /* Persistence.swift in Sources */,
 				A04AE1722AB327E200138A2B /* Colors+Extension.swift in Sources */,
-				A04AE14F2AB2FB9F00138A2B /* ContentView.swift in Sources */,
+				A04AE19A2AB4A52600138A2B /* AppEnvironment.swift in Sources */,
+				A04AE19E2AB4A9C200138A2B /* APIManager.swift in Sources */,
+				A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */,
 				A04AE14D2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift in Sources */,
+				A04AE1AC2AB4E0DE00138A2B /* LoginViewModel.swift in Sources */,
+				A04AE17E2AB381FF00138A2B /* LoginRepository.swift in Sources */,
 				A04AE1622AB315FF00138A2B /* LoginView.swift in Sources */,
+				A04AE18A2AB496C600138A2B /* ServicesContainer.swift in Sources */,
+				A04AE1832AB486C400138A2B /* LoginService.swift in Sources */,
 				A04AE1592AB2FBA100138A2B /* PlenyInterviewTask.xcdatamodeld in Sources */,
+				A04AE1862AB493BE00138A2B /* DependencyInjector.swift in Sources */,
 				A04AE1752AB3472D00138A2B /* CustomInputView.swift in Sources */,
 				A04AE1702AB3274000138A2B /* Fonts+Extension.swift in Sources */,
+				A04AE1802AB3828F00138A2B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,12 +534,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PlenyInterviewTask/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PlenyInterviewTask/Info.plist;
+				INFOPLIST_FILE = PlenyInterviewTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,12 +565,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PlenyInterviewTask/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PlenyInterviewTask/Info.plist;
+				INFOPLIST_FILE = PlenyInterviewTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

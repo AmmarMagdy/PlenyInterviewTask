@@ -16,7 +16,6 @@ struct CustomInputView<Content: View>: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(Font.sfProDisplay(.bold, size: 15))
-                .foregroundColor(Color.gray())
             RoundedRectangle(cornerRadius: 8)
                 .strokeBorder(Color.borderColor(), style: StrokeStyle(lineWidth: 1))
                 .overlay {

@@ -8,11 +8,22 @@
 import Foundation
 
 extension DIContainer {
+    
     struct Services {
+        
         let loginService: LoginServiceProtocol
         
         init(loginService: LoginServiceProtocol) {
             self.loginService = loginService
+        }
+    }
+    
+    struct ViewModels {
+        
+        let loginViewModel: LoginViewModel
+        
+        init(loginViewModel: LoginViewModel) {
+            self.loginViewModel = loginViewModel
         }
     }
 }

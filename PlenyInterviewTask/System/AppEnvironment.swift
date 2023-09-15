@@ -20,7 +20,8 @@ extension AppEnvironment {
         let apiClient = URLSessionAPIClient()
         let webRepositories = configuredWebRepositories(apiClient: apiClient)
         let services = configuredServices(webRepositories: webRepositories)
-        let diContainer = DIContainer(services: services)
+        let viewModels = configuredViewModels(services: services)
+        let diContainer = DIContainer(services: services, viewModels: viewModels)
         return AppEnvironment(container: diContainer)
     }
     
@@ -32,6 +33,11 @@ extension AppEnvironment {
     private static func configuredServices(webRepositories: DIContainer.WebRepositories) -> DIContainer.Services {
         let loginService = LoginService(repository: webRepositories.loginRepository)
         return .init(loginService: loginService)
+    }
+    
+    private static func configuredViewModels(services: DIContainer.Services) -> DIContainer.ViewModels {
+        let loginService = LoginViewModel(service: services.loginService)
+        return .init(loginViewModel: loginService)
     }
 }
 
