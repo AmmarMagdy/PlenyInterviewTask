@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension DIContainer {
+    struct Services {
+        let loginService: LoginServiceProtocol
+        
+        init(loginService: LoginServiceProtocol) {
+            self.loginService = loginService
+        }
+    }
+}

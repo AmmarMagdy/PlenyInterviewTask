@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    let id: Int
+    let username, email, firstName, lastName, gender, image, token: String
+}
