@@ -50,8 +50,6 @@ struct LoginView: View {
                         .background(Color.black.opacity(0.3))
                 }
             }
-        }.onAppear() {
-            viewModel.openTabs()
         }
     }
     

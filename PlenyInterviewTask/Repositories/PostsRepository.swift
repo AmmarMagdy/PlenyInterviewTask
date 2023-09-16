@@ -8,7 +8,7 @@
 import Combine
 
 protocol PostsRepositoryProtocol {
-    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<Posts, Error>
+    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error>
 }
 
 class PostsRepository: PostsRepositoryProtocol {
@@ -19,7 +19,7 @@ class PostsRepository: PostsRepositoryProtocol {
         self.apiClient = apiClient
     }
     
-    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<Posts, Error> {
+    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error> {
         return apiClient.request(Endpoint.getPosts(limit: limit, skip: skip))
             .eraseToAnyPublisher()
     }

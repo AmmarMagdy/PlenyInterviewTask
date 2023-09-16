@@ -11,8 +11,8 @@ import Stinsen
 
 class LoginViewModel: ObservableObject {
     
-    let service: LoginServiceProtocol
-    var cancellables = Set<AnyCancellable>()
+    private let service: LoginServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
     @Published var userName: String = ""
     @Published var password: String = ""
     @Published var errorMessage: String?
@@ -31,6 +31,7 @@ class LoginViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
+                //TODO: save token
                 self.showProgressView = false
                 switch completion {
                 case .finished:

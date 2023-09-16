@@ -24,7 +24,7 @@ struct TabsView: View {
     var body: some View {
         TabView {
             NavigationView {
-                PostView()
+                PostView(viewModel: environment.container.viewModels.postsViewModel)
             }
             .tabItem { Image("home") }
             .tag(Tab.main)
@@ -45,13 +45,6 @@ struct TabsView: View {
             LoginView(viewModel: environment.container.viewModels.loginViewModel)
                 .tabItem { Image("profile") }
                 .tag(Tab.profile)
-            //            NavigationView {
-            //                SettingsView(coordinator: coordinator)
-            //            }
-            //            .navigationViewStyle(StackNavigationViewStyle())
-            //            .tabItem { Label("", systemImage: "gear") }
-            //            .tag(HomeTab.settings)
-            
         }
         .shadow(color: Color.borderColor(), radius: 25, x: 20, y: 15)
         .accentColor(Color.primaryColor())
