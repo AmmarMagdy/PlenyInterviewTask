@@ -13,6 +13,7 @@ protocol APIEndpoint {
     var method: HTTPMethod { get }
     var headers: [String: String]? { get }
     var parameters: [String: Any]? { get }
+    var queryParameter: [URLQueryItem]? { get }
 }
 
 enum Endpoint: APIEndpoint {
@@ -61,11 +62,14 @@ enum Endpoint: APIEndpoint {
         
     }
     
-    var queryParameter: [String: Any]? {
+    var queryParameter: [URLQueryItem]? {
         switch self {
         case .getPosts(let limit, let skip):
-            return ["limit": limit,
-                    "skip": skip]
+            return [
+                URLQueryItem(name: "limit", value: "\(limit)"),
+                URLQueryItem(name: "skip", value: "\(skip)")
+            ]
+            
         default:
             return nil
         }

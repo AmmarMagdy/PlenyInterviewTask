@@ -8,18 +8,18 @@
 import Combine
 
 protocol PostsServiceProtocol {
-    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<Posts, Error>
+    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error>
 }
 
 class PostsService: PostsServiceProtocol {
     
-    private let repository: PostsRepository
+    private let repository: PostsRepositoryProtocol
     
-    init(repository: PostsRepository) {
+    init(repository: PostsRepositoryProtocol) {
         self.repository = repository
     }
     
-    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<Posts, Error> {
+    func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error> {
         return repository.fetchPosts(limit: limit, skip: skip)
             .eraseToAnyPublisher()
     }

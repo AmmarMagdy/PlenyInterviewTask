@@ -27,22 +27,26 @@ extension AppEnvironment {
     
     private static func configuredWebRepositories(apiClient: URLSessionAPIClient) -> DIContainer.WebRepositories {
         let loginRepository = LoginRepository(apiClient: apiClient)
-        return .init(loginRepository: loginRepository)
+        let postsRepository = PostsRepository(apiClient: apiClient)
+        return .init(loginRepository: loginRepository, postsRepository: postsRepository)
     }
     
     private static func configuredServices(webRepositories: DIContainer.WebRepositories) -> DIContainer.Services {
         let loginService = LoginService(repository: webRepositories.loginRepository)
-        return .init(loginService: loginService)
+        let postsService = PostsService(repository: webRepositories.postsRepository)
+        return .init(loginService: loginService, postsService: postsService)
     }
     
     private static func configuredViewModels(services: DIContainer.Services) -> DIContainer.ViewModels {
-        let loginService = LoginViewModel(service: services.loginService)
-        return .init(loginViewModel: loginService)
+        let loginViewModel = LoginViewModel(service: services.loginService)
+        let postsViewModel = PostsViewModel(service: services.postsService)
+        return .init(loginViewModel: loginViewModel, postsViewModel: postsViewModel)
     }
 }
 
 extension DIContainer {
     struct WebRepositories {
         let loginRepository: LoginRepositoryProtocol
+        let postsRepository: PostsRepositoryProtocol
     }
 }

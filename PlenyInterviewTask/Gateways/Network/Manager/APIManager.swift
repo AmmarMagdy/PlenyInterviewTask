@@ -17,13 +17,18 @@ class URLSessionAPIClient: APIClient {
     func request<T: Decodable>(_ endpoint: APIEndpoint) -> AnyPublisher<T, Error> {
         
         let url = endpoint.baseURL.appendingPathComponent(endpoint.path)
-        var request = URLRequest(url: url)
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+
+        urlComponents?.queryItems = endpoint.queryParameter
+    
+        var request = URLRequest(url: urlComponents?.url ?? url)
         request.httpMethod = endpoint.method.rawValue
         if let data = convertDictionaryToData(dictionary: endpoint.parameters) {
             request.httpBody = data
         } else {
             print("Failed to convert dictionary to data.")
         }
+        
         endpoint.headers?.forEach { request.addValue($0.value, forHTTPHeaderField: $0.key) }
         
         return URLSession.shared.dataTaskPublisher(for: request)
@@ -49,5 +54,4 @@ class URLSessionAPIClient: APIClient {
         }
         return nil
     }
-    
 }

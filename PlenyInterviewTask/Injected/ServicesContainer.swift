@@ -12,18 +12,22 @@ extension DIContainer {
     struct Services {
         
         let loginService: LoginServiceProtocol
-        
-        init(loginService: LoginServiceProtocol) {
+        let postsService: PostsServiceProtocol
+
+        init(loginService: LoginServiceProtocol, postsService: PostsServiceProtocol) {
             self.loginService = loginService
+            self.postsService = postsService
         }
     }
     
     struct ViewModels {
         
         let loginViewModel: LoginViewModel
+        let postsViewModel: PostsViewModel
 
-        init(loginViewModel: LoginViewModel) {
+        init(loginViewModel: LoginViewModel, postsViewModel: PostsViewModel) {
             self.loginViewModel = loginViewModel
+            self.postsViewModel = postsViewModel
         }
     }
 }
