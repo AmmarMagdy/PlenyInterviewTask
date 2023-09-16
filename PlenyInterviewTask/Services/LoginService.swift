@@ -14,12 +14,13 @@ protocol LoginServiceProtocol {
 class LoginService: LoginServiceProtocol {
     
     private let repository: LoginRepositoryProtocol
-
+    
     init(repository: LoginRepositoryProtocol) {
         self.repository = repository
     }
-
+    
     func login(userName: String, password: String) -> AnyPublisher<User, Error> {
-        return repository.login(userName: userName, password: password)            .eraseToAnyPublisher()
+        return repository.login(userName: userName, password: password)
+            .eraseToAnyPublisher()
     }
 }
