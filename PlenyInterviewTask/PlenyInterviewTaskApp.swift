@@ -11,10 +11,11 @@ import SwiftUI
 struct PlenyInterviewTaskApp: App {
     
     var body: some Scene {
-        let environment = AppEnvironment.bootstrap()
+//        let environment = AppEnvironment.bootstrap()
 
         WindowGroup {
-            LoginView(viewModel: environment.container.viewModels.loginViewModel)
+            LoginCoordinator().view()
+//            LoginView(viewModel: environment.container.viewModels.loginViewModel)
         }
     }
 }

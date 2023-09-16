@@ -7,22 +7,19 @@
 
 import SwiftUI
 import Combine
+import Stinsen
 
 struct LoginView: View {
     
     @ObservedObject var viewModel: LoginViewModel
     
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
-        GeometryReader { geometry in
+        NavigationView {
             ZStack {
                 VStack(spacing: 32) {
                     Image("header")
                         .resizable()
-                        .frame(width: geometry.size.width, height: geometry.size.height / 2, alignment: .top)
+                        .frame(width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height / 2, alignment: .top)
                     Text("Welcome")
                         .font(.sfProDisplay(.bold, size: 20))
                         .foregroundColor(.primaryColor())
@@ -37,7 +34,7 @@ struct LoginView: View {
                     }, label: {
                         Text("Sign in")
                             .font(Font.sfProDisplay(.medium, size: 17))
-                            .frame(width: geometry.size.width - 32, height: 46)
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 46)
                             .background(Color.primaryColor())
                             .foregroundColor(Color.white)
                             .cornerRadius(32)
@@ -54,6 +51,10 @@ struct LoginView: View {
                 }
             }
         }
+    }
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
     }
 }
 

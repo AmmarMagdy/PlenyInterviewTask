@@ -6,5 +6,6 @@ target 'PlenyInterviewTask' do
   use_frameworks!
 
   # Pods for PlenyInterviewTask
+  pod 'Stinsen'
 
 end

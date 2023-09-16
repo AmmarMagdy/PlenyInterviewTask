@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9B8E427E238EB2D189631424 /* Pods_PlenyInterviewTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C77C895374D8AD38287C658 /* Pods_PlenyInterviewTask.framework */; };
+		A00D71172AB53C650035B2F6 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D71162AB53C650035B2F6 /* PostsService.swift */; };
+		A00D71192AB53C830035B2F6 /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D71182AB53C830035B2F6 /* PostsRepository.swift */; };
+		A00D711B2AB53CC20035B2F6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D711A2AB53CC20035B2F6 /* Post.swift */; };
+		A00D711D2AB53CE40035B2F6 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D711C2AB53CE40035B2F6 /* Posts.swift */; };
+		A00D71222AB53FBF0035B2F6 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D71212AB53FBF0035B2F6 /* TabsView.swift */; };
+		A00D71322AB5BAB30035B2F6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D71312AB5BAB30035B2F6 /* LoginCoordinator.swift */; };
+		A00D713A2AB5C1E70035B2F6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D71392AB5C1E70035B2F6 /* PostView.swift */; };
+		A00D71442AB5EC400035B2F6 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = A00D71432AB5EC400035B2F6 /* Stinsen */; };
 		A04AE14D2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE14C2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift */; };
 		A04AE1512AB2FBA100138A2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04AE1502AB2FBA100138A2B /* Assets.xcassets */; };
 		A04AE1542AB2FBA100138A2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04AE1532AB2FBA100138A2B /* Preview Assets.xcassets */; };
@@ -32,12 +40,21 @@
 		A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */; };
 		A04AE1AC2AB4E0DE00138A2B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */; };
 		A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1B12AB5029600138A2B /* ErrorView.swift */; };
+		FC0F94892AB5EE01000FEB15 /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */; };
+		FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39FE8CA38BD7C1791C864A62 /* Pods-PlenyInterviewTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlenyInterviewTask.release.xcconfig"; path = "Target Support Files/Pods-PlenyInterviewTask/Pods-PlenyInterviewTask.release.xcconfig"; sourceTree = "<group>"; };
 		4CB63E2C611B10DE9DE340AA /* Pods-PlenyInterviewTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlenyInterviewTask.debug.xcconfig"; path = "Target Support Files/Pods-PlenyInterviewTask/Pods-PlenyInterviewTask.debug.xcconfig"; sourceTree = "<group>"; };
 		5C77C895374D8AD38287C658 /* Pods_PlenyInterviewTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlenyInterviewTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00D71162AB53C650035B2F6 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		A00D71182AB53C830035B2F6 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		A00D711A2AB53CC20035B2F6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A00D711C2AB53CE40035B2F6 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		A00D71212AB53FBF0035B2F6 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		A00D71312AB5BAB30035B2F6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		A00D71392AB5C1E70035B2F6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlenyInterviewTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04AE14C2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlenyInterviewTaskApp.swift; sourceTree = "<group>"; };
 		A04AE1502AB2FBA100138A2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +81,8 @@
 		A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A04AE1B12AB5029600138A2B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
+		FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8E427E238EB2D189631424 /* Pods_PlenyInterviewTask.framework in Frameworks */,
+				A00D71442AB5EC400035B2F6 /* Stinsen in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +105,32 @@
 				39FE8CA38BD7C1791C864A62 /* Pods-PlenyInterviewTask.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A00D711E2AB53F580035B2F6 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A00D71212AB53FBF0035B2F6 /* TabsView.swift */,
+				FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		A00D712C2AB59D100035B2F6 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				A00D71392AB5C1E70035B2F6 /* PostView.swift */,
+				FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		A00D71402AB5E8490035B2F6 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A00D71312AB5BAB30035B2F6 /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		A04AE1402AB2FB9F00138A2B = {
@@ -134,6 +180,8 @@
 		A04AE15F2AB315DB00138A2B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A00D712C2AB59D100035B2F6 /* Posts */,
+				A00D711E2AB53F580035B2F6 /* Tabs */,
 				A04AE1602AB315E500138A2B /* Login */,
 			);
 			path = UI;
@@ -144,6 +192,7 @@
 			children = (
 				A04AE1612AB315FF00138A2B /* LoginView.swift */,
 				A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */,
+				A00D71402AB5E8490035B2F6 /* Coordinators */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -209,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				A04AE17F2AB3828F00138A2B /* User.swift */,
+				A00D711A2AB53CC20035B2F6 /* Post.swift */,
+				A00D711C2AB53CE40035B2F6 /* Posts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				A04AE17D2AB381FF00138A2B /* LoginRepository.swift */,
+				A00D71182AB53C830035B2F6 /* PostsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -225,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				A04AE1822AB486C400138A2B /* LoginService.swift */,
+				A00D71162AB53C650035B2F6 /* PostsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,6 +352,7 @@
 			);
 			name = PlenyInterviewTask;
 			packageProductDependencies = (
+				A00D71432AB5EC400035B2F6 /* Stinsen */,
 			);
 			productName = PlenyInterviewTask;
 			productReference = A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */;
@@ -329,6 +383,7 @@
 			);
 			mainGroup = A04AE1402AB2FB9F00138A2B;
 			packageReferences = (
+				A00D71422AB5EC400035B2F6 /* XCRemoteSwiftPackageReference "stinsen" */,
 			);
 			productRefGroup = A04AE14A2AB2FB9F00138A2B /* Products */;
 			projectDirPath = "";
@@ -385,20 +440,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04AE1772AB36A5800138A2B /* SecureInputView.swift in Sources */,
+				A00D711B2AB53CC20035B2F6 /* Post.swift in Sources */,
 				A04AE1A52AB4A9DC00138A2B /* Endpoint.swift in Sources */,
+				A00D71222AB53FBF0035B2F6 /* TabsView.swift in Sources */,
 				A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */,
 				A04AE1562AB2FBA100138A2B /* Persistence.swift in Sources */,
+				A00D71322AB5BAB30035B2F6 /* LoginCoordinator.swift in Sources */,
+				A00D711D2AB53CE40035B2F6 /* Posts.swift in Sources */,
 				A04AE1722AB327E200138A2B /* Colors+Extension.swift in Sources */,
+				FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */,
 				A04AE19A2AB4A52600138A2B /* AppEnvironment.swift in Sources */,
 				A04AE19E2AB4A9C200138A2B /* APIManager.swift in Sources */,
 				A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */,
+				A00D713A2AB5C1E70035B2F6 /* PostView.swift in Sources */,
 				A04AE14D2AB2FB9F00138A2B /* PlenyInterviewTaskApp.swift in Sources */,
+				A00D71192AB53C830035B2F6 /* PostsRepository.swift in Sources */,
 				A04AE1AC2AB4E0DE00138A2B /* LoginViewModel.swift in Sources */,
 				A04AE17E2AB381FF00138A2B /* LoginRepository.swift in Sources */,
 				A04AE1622AB315FF00138A2B /* LoginView.swift in Sources */,
 				A04AE18A2AB496C600138A2B /* ServicesContainer.swift in Sources */,
+				FC0F94892AB5EE01000FEB15 /* PostCoordinator.swift in Sources */,
 				A04AE1832AB486C400138A2B /* LoginService.swift in Sources */,
 				A04AE1592AB2FBA100138A2B /* PlenyInterviewTask.xcdatamodeld in Sources */,
+				A00D71172AB53C650035B2F6 /* PostsService.swift in Sources */,
 				A04AE1862AB493BE00138A2B /* DependencyInjector.swift in Sources */,
 				A04AE1752AB3472D00138A2B /* CustomInputView.swift in Sources */,
 				A04AE1702AB3274000138A2B /* Fonts+Extension.swift in Sources */,
@@ -609,6 +673,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A00D71422AB5EC400035B2F6 /* XCRemoteSwiftPackageReference "stinsen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rundfunk47/stinsen.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A00D71432AB5EC400035B2F6 /* Stinsen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A00D71422AB5EC400035B2F6 /* XCRemoteSwiftPackageReference "stinsen" */;
+			productName = Stinsen;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A04AE1572AB2FBA100138A2B /* PlenyInterviewTask.xcdatamodeld */ = {

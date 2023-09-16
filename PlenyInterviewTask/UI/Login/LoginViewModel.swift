@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import Stinsen
 
 class LoginViewModel: ObservableObject {
     
@@ -17,7 +18,8 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var showAlert: Bool = false
     @Published var showProgressView: Bool = false
-
+    
+    @RouterObject var router: NavigationRouter<LoginCoordinator>!
     
     init(service: LoginServiceProtocol) {
         self.service = service
@@ -27,11 +29,12 @@ class LoginViewModel: ObservableObject {
         showProgressView = true
         service.login(userName: userName, password: password)
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { [weak self] completion in
+                guard let self = self else { return }
                 self.showProgressView = false
                 switch completion {
                 case .finished:
-                    break
+                    self.openTabs()
                 case .failure(let error):
                     print("Failed to fetch user: \(error)")
                 }
@@ -44,8 +47,12 @@ class LoginViewModel: ObservableObject {
         if userName.isEmpty || password.isEmpty {
             errorMessage = "Please Enter Valid Username or Password"
             showAlert = true
-          return false
+            return false
         }
         return true
-      }
+    }
+    
+    func openTabs() {
+        router.coordinator.routeToTabs()
+    }
 }

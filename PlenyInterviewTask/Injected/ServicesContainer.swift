@@ -21,7 +21,7 @@ extension DIContainer {
     struct ViewModels {
         
         let loginViewModel: LoginViewModel
-        
+
         init(loginViewModel: LoginViewModel) {
             self.loginViewModel = loginViewModel
         }
