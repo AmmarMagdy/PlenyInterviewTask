@@ -11,8 +11,8 @@ struct PostView: View {
     
     @ObservedObject var viewModel: PostsViewModel
     
-    @State var text: String = ""
-    @State var showTextField: Bool = false
+    @State private var text: String = ""
+    @State private var showTextField: Bool = false
     
     var body: some View {
         VStack {
@@ -33,34 +33,14 @@ struct PostView: View {
                 }
             }
         }.onAppear() {
-            viewModel.getPosts()
+            viewModel.getIntialPosts()
         }
     }
     
     var headerView: some View {
         ZStack {
             if showTextField {
-                HStack {
-                    Image("search")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                        .padding([.leading, .vertical])
-                    TextField("ammar", text: $text)
-                    Button {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            showTextField.toggle()
-                        }
-                    } label: {
-                        Image("close")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .padding(8)
-                    }
-                }.frame(height: 40)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.borderColor(), lineWidth: 1)
-                ).frame(height: 40).padding(.horizontal)
+               searchBar
             } else {
                 HStack {
                     Image("logo")
@@ -79,6 +59,34 @@ struct PostView: View {
                 .frame(height: 40)
             }
         }
+    }
+    
+    var searchBar: some View {
+        HStack {
+            Image("search")
+                .resizable()
+                .frame(width: 16, height: 16)
+                .padding([.leading, .vertical])
+            TextField("Search", text: $text).onChange(of: text) { newValue in
+                viewModel.searchPosts(text: newValue)
+            }
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    text = ""
+                    viewModel.getIntialPosts()
+                    showTextField.toggle()
+                }
+            } label: {
+                Image("close")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .padding(8)
+            }
+        }.frame(height: 40)
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.borderColor(), lineWidth: 1)
+        ).frame(height: 40).padding(.horizontal)
     }
 }
 

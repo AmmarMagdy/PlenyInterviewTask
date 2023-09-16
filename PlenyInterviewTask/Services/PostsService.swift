@@ -9,6 +9,7 @@ import Combine
 
 protocol PostsServiceProtocol {
     func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error>
+    func searchPosts(text: String) -> AnyPublisher<PostsList, Error>
 }
 
 class PostsService: PostsServiceProtocol {
@@ -22,5 +23,9 @@ class PostsService: PostsServiceProtocol {
     func fetchPosts(limit: Int, skip: Int) -> AnyPublisher<PostsList, Error> {
         return repository.fetchPosts(limit: limit, skip: skip)
             .eraseToAnyPublisher()
+    }
+    
+    func searchPosts(text: String) -> AnyPublisher<PostsList, Error> {
+        return repository.searchPosts(text: text).eraseToAnyPublisher()
     }
 }

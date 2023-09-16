@@ -20,6 +20,7 @@ enum Endpoint: APIEndpoint {
     
     case login(userName: String, password: String)
     case getPosts(limit: Int, skip: Int)
+    case searchPosts(text: String)
     
     var baseURL: URL {
         return URL(string: "https://dummyjson.com/")!
@@ -31,6 +32,8 @@ enum Endpoint: APIEndpoint {
             return "auth/login"
         case .getPosts:
             return "posts"
+        case .searchPosts:
+            return "posts/search"
             
         }
     }
@@ -39,14 +42,14 @@ enum Endpoint: APIEndpoint {
         switch self {
         case .login:
             return .post
-        case .getPosts:
+        case .getPosts, .searchPosts:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .login, .getPosts:
+        case .login, .getPosts, .searchPosts:
             return ["Content-Type": "application/json"]
         }
     }
@@ -68,6 +71,11 @@ enum Endpoint: APIEndpoint {
             return [
                 URLQueryItem(name: "limit", value: "\(limit)"),
                 URLQueryItem(name: "skip", value: "\(skip)")
+            ]
+            
+        case .searchPosts(let text):
+            return [
+                URLQueryItem(name: "q", value: "\(text)"),
             ]
             
         default:

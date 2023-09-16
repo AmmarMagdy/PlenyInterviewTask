@@ -15,24 +15,46 @@ class PostsViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     @Published var showProgressView: Bool = false
-    @Published var dataIsLoading = false
     @Published var items: [Post] = []
     
     private let limit = 15
     private var skip: Int = 0
     private var list: PostsList?
-    
+    private var dataIsLoading = false
+
     
     init(service: PostsServiceProtocol) {
         self.service = service
     }
     
-    func getPosts() {
-        service.fetchPosts(limit: limit, skip: skip)
-            .receive(on: DispatchQueue.main)
+    func getIntialPosts() {
+        skip = 0
+        items = []
+        getPosts(skip: skip)
+    }
+    
+    private func getPosts(skip: Int) {
+        guard !dataIsLoading else { return }
+        dataIsLoading = true
+        handlePostListener(publisher: service.fetchPosts(limit: limit, skip: skip))
+    }
+    
+    func searchPosts(text: String) {
+        guard text.count > 0, !dataIsLoading else {
+            getIntialPosts()
+            return
+        }
+        self.items = []
+        dataIsLoading = true
+        handlePostListener(publisher: service.searchPosts(text: text))
+    }
+    
+    private func handlePostListener(publisher: AnyPublisher<PostsList, Error>) {
+        publisher.receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
                 self.showProgressView = false
+                self.dataIsLoading = false
                 //TODO: handle skeleton apperance
                 switch completion {
                 case .finished:
@@ -43,9 +65,9 @@ class PostsViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] response in
                 guard let self = self else { return }
+                print(response)
                 self.list = response
                 self.items.append(contentsOf: response.posts)
-                self.dataIsLoading = false
             }.store(in: &cancellables)
     }
     
@@ -54,7 +76,7 @@ class PostsViewModel: ObservableObject {
         if list?.posts.last?.id == post.id, let total = list?.total, (skip + limit) <= total {
             showProgressView = true
             skip += limit
-            getPosts()
+            getPosts(skip: skip)
         }
     }
     
