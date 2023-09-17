@@ -17,38 +17,41 @@ enum Tab {
 
 struct TabsView: View {
     
-    // MARK: Stored Properties
     var environment = AppEnvironment.bootstrap()
     
-    // MARK: Views
     var body: some View {
         TabView {
-            NavigationView {
-                PostView(viewModel: environment.container.viewModels.postsViewModel)
-            }
-            .tabItem { Image("home") }
-            .tag(Tab.main)
-            .navigationViewStyle(StackNavigationViewStyle())
+            createTabItem(view: PostView(viewModel: environment.container.viewModels.postsViewModel),
+                          image: Image("home"),
+                          tag: Tab.main)
             
-            LoginView(viewModel: environment.container.viewModels.loginViewModel)
-                .tabItem { Image("shop") }
-                .tag(Tab.stors)
+            createTabItem(view: ContentView(title: "Shop"),
+                          image: Image("shop"),
+                          tag: Tab.stors)
             
-            LoginView(viewModel: environment.container.viewModels.loginViewModel)
-                .tabItem { Image("discount") }
-                .tag(Tab.offers)
+            createTabItem(view: ContentView(title: "Discount"),
+                          image: Image("discount"),
+                          tag: Tab.offers)
             
-            LoginView(viewModel: environment.container.viewModels.loginViewModel)
-                .tabItem { Image("gallery") }
-                .tag(Tab.gallery)
+            createTabItem(view: ContentView(title: "Gallery"),
+                          image: Image("gallery"),
+                          tag: Tab.gallery)
             
-            LoginView(viewModel: environment.container.viewModels.loginViewModel)
-                .tabItem { Image("profile") }
-                .tag(Tab.profile)
+            createTabItem(view: ContentView(title: "Profile"),
+                          image: Image("profile"),
+                          tag: Tab.profile)
         }
-        .shadow(color: Color.borderColor(), radius: 25, x: 20, y: 15)
+        .border(Color.red, width: 6)
         .accentColor(Color.primaryColor())
+        .onAppear() {
+            UITabBar.appearance().barTintColor = .white
+            UITabBar.appearance().isTranslucent = false
+        }
     }
-       
     
+    func createTabItem<T: Hashable>(view: some View, image: Image ,tag: T) -> some View {
+        view.tabItem() {
+            image
+        }.tag(tag)
+    }
 }
