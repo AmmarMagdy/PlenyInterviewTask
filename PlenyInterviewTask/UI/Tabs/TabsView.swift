@@ -41,7 +41,6 @@ struct TabsView: View {
                           image: Image("profile"),
                           tag: Tab.profile)
         }
-        .border(Color.red, width: 6)
         .accentColor(Color.primaryColor())
         .onAppear() {
             UITabBar.appearance().barTintColor = .white
