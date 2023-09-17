@@ -42,6 +42,7 @@
 		A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1B12AB5029600138A2B /* ErrorView.swift */; };
 		A09638A72AB759D0002810CE /* FullScreenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09638A62AB759D0002810CE /* FullScreenImage.swift */; };
 		A09638A92AB75A02002810CE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09638A82AB75A02002810CE /* UIApplication+Extension.swift */; };
+		A09638B12AB75DAC002810CE /* PlenyInterviewTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09638B02AB75DAC002810CE /* PlenyInterviewTaskTests.swift */; };
 		FC0F94892AB5EE01000FEB15 /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */; };
 		FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */; };
 		FC3246AE2AB60C1400832754 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3246AD2AB60C1400832754 /* PostsViewModel.swift */; };
@@ -50,6 +51,16 @@
 		FCF5D7492AB665A80076041B /* PostsDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D7482AB665A80076041B /* PostsDBRepository.swift */; };
 		FCF5D74B2AB6698A0076041B /* Posts+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D74A2AB6698A0076041B /* Posts+CoreData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A09638B22AB75DAC002810CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04AE1412AB2FB9F00138A2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A04AE1482AB2FB9F00138A2B;
+			remoteInfo = PlenyInterviewTask;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		39FE8CA38BD7C1791C864A62 /* Pods-PlenyInterviewTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlenyInterviewTask.release.xcconfig"; path = "Target Support Files/Pods-PlenyInterviewTask/Pods-PlenyInterviewTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +101,8 @@
 		A04AE1B12AB5029600138A2B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A09638A62AB759D0002810CE /* FullScreenImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImage.swift; sourceTree = "<group>"; };
 		A09638A82AB75A02002810CE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		A09638AE2AB75DAC002810CE /* PlenyInterviewTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlenyInterviewTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09638B02AB75DAC002810CE /* PlenyInterviewTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlenyInterviewTaskTests.swift; sourceTree = "<group>"; };
 		FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
 		FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
 		FC3246AD2AB60C1400832754 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
@@ -106,6 +119,13 @@
 			files = (
 				9B8E427E238EB2D189631424 /* Pods_PlenyInterviewTask.framework in Frameworks */,
 				A00D71442AB5EC400035B2F6 /* Stinsen in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A09638AB2AB75DAC002810CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A04AE14B2AB2FB9F00138A2B /* PlenyInterviewTask */,
+				A09638AF2AB75DAC002810CE /* PlenyInterviewTaskTests */,
 				A04AE14A2AB2FB9F00138A2B /* Products */,
 				598C3CF73DB1016CC1FC5687 /* Pods */,
 				C1199DA0B043B3D78A95ACC1 /* Frameworks */,
@@ -163,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */,
+				A09638AE2AB75DAC002810CE /* PlenyInterviewTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,6 +368,14 @@
 			path = Gateways;
 			sourceTree = "<group>";
 		};
+		A09638AF2AB75DAC002810CE /* PlenyInterviewTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				A09638B02AB75DAC002810CE /* PlenyInterviewTaskTests.swift */,
+			);
+			path = PlenyInterviewTaskTests;
+			sourceTree = "<group>";
+		};
 		C1199DA0B043B3D78A95ACC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +433,24 @@
 			productReference = A04AE1492AB2FB9F00138A2B /* PlenyInterviewTask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A09638AD2AB75DAC002810CE /* PlenyInterviewTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A09638B42AB75DAC002810CE /* Build configuration list for PBXNativeTarget "PlenyInterviewTaskTests" */;
+			buildPhases = (
+				A09638AA2AB75DAC002810CE /* Sources */,
+				A09638AB2AB75DAC002810CE /* Frameworks */,
+				A09638AC2AB75DAC002810CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A09638B32AB75DAC002810CE /* PBXTargetDependency */,
+			);
+			name = PlenyInterviewTaskTests;
+			productName = PlenyInterviewTaskTests;
+			productReference = A09638AE2AB75DAC002810CE /* PlenyInterviewTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -415,6 +463,10 @@
 				TargetAttributes = {
 					A04AE1482AB2FB9F00138A2B = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					A09638AD2AB75DAC002810CE = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = A04AE1482AB2FB9F00138A2B;
 					};
 				};
 			};
@@ -435,6 +487,7 @@
 			projectRoot = "";
 			targets = (
 				A04AE1482AB2FB9F00138A2B /* PlenyInterviewTask */,
+				A09638AD2AB75DAC002810CE /* PlenyInterviewTaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +502,13 @@
 				A04AE16C2AB3257900138A2B /* SFPRODISPLAYMEDIUM.OTF in Resources */,
 				A04AE16D2AB3257900138A2B /* SFPRODISPLAYREGULAR.OTF in Resources */,
 				A04AE1512AB2FBA100138A2B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A09638AC2AB75DAC002810CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +582,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A09638AA2AB75DAC002810CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A09638B12AB75DAC002810CE /* PlenyInterviewTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A09638B32AB75DAC002810CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A04AE1482AB2FB9F00138A2B /* PlenyInterviewTask */;
+			targetProxy = A09638B22AB75DAC002810CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A04AE15A2AB2FBA100138A2B /* Debug */ = {
@@ -703,6 +779,40 @@
 			};
 			name = Release;
 		};
+		A09638B52AB75DAC002810CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ammar.PlenyInterviewTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlenyInterviewTask.app/PlenyInterviewTask";
+			};
+			name = Debug;
+		};
+		A09638B62AB75DAC002810CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ammar.PlenyInterviewTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlenyInterviewTask.app/PlenyInterviewTask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -720,6 +830,15 @@
 			buildConfigurations = (
 				A04AE15D2AB2FBA100138A2B /* Debug */,
 				A04AE15E2AB2FBA100138A2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A09638B42AB75DAC002810CE /* Build configuration list for PBXNativeTarget "PlenyInterviewTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A09638B52AB75DAC002810CE /* Debug */,
+				A09638B62AB75DAC002810CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
