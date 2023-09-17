@@ -13,15 +13,19 @@ class PostsViewModel: ObservableObject {
     
     private let service: PostsServiceProtocol
     private var cancellables = Set<AnyCancellable>()
-
+    
     @Published var showProgressView: Bool = false
     @Published var items: [Post] = []
     
     private let limit = 15
     private var skip: Int = 0
-    private var list: PostsList?
+    private var list: PostsList? {
+        didSet {
+            saveIntialPosts()
+        }
+    }
     private var dataIsLoading = false
-
+    
     
     init(service: PostsServiceProtocol) {
         self.service = service
@@ -60,6 +64,8 @@ class PostsViewModel: ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
+                    //MARK: In case of error get data from db if exist
+                    self.loadLocalPosts(publisher: service.getLocalPosts())
                     //TODO: handel error
                     print("Failed to fetch user: \(error)")
                 }
@@ -68,6 +74,15 @@ class PostsViewModel: ObservableObject {
                 print(response)
                 self.list = response
                 self.items.append(contentsOf: response.posts)
+            }.store(in: &cancellables)
+    }
+    
+    private func loadLocalPosts(publisher: AnyPublisher<[Post], Never>) {
+        publisher.receive(on: DispatchQueue.main)
+            .sink { _ in
+            } receiveValue: { [weak self] items in
+                guard let self = self else { return }
+                self.items = items
             }.store(in: &cancellables)
     }
     
@@ -83,6 +98,11 @@ class PostsViewModel: ObservableObject {
     func post(at index: Int) -> Post? {
         guard items.count > index else { return nil }
         return items[index]
+    }
+    
+    private func saveIntialPosts() {
+        guard items.count == 0 else { return }
+        service.savePosts(list: list)
     }
 }
 

@@ -44,6 +44,8 @@
 		FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */; };
 		FC3246AE2AB60C1400832754 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3246AD2AB60C1400832754 /* PostsViewModel.swift */; };
 		FC3246B02AB61E7600832754 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3246AF2AB61E7600832754 /* PostCell.swift */; };
+		FCF5D7492AB665A80076041B /* PostsDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D7482AB665A80076041B /* PostsDBRepository.swift */; };
+		FCF5D74B2AB6698A0076041B /* Posts+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D74A2AB6698A0076041B /* Posts+CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
 		FC3246AD2AB60C1400832754 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		FC3246AF2AB61E7600832754 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FCF5D7482AB665A80076041B /* PostsDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDBRepository.swift; sourceTree = "<group>"; };
+		FCF5D74A2AB6698A0076041B /* Posts+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 				A04AE17F2AB3828F00138A2B /* User.swift */,
 				A00D711A2AB53CC20035B2F6 /* Post.swift */,
 				A00D711C2AB53CE40035B2F6 /* PostsList.swift */,
+				FCF5D74A2AB6698A0076041B /* Posts+CoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			children = (
 				A04AE17D2AB381FF00138A2B /* LoginRepository.swift */,
 				A00D71182AB53C830035B2F6 /* PostsRepository.swift */,
+				FCF5D7482AB665A80076041B /* PostsDBRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -470,6 +476,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04AE1772AB36A5800138A2B /* SecureInputView.swift in Sources */,
+				FCF5D7492AB665A80076041B /* PostsDBRepository.swift in Sources */,
+				FCF5D74B2AB6698A0076041B /* Posts+CoreData.swift in Sources */,
 				A00D711B2AB53CC20035B2F6 /* Post.swift in Sources */,
 				A04AE1A52AB4A9DC00138A2B /* Endpoint.swift in Sources */,
 				A00D71222AB53FBF0035B2F6 /* TabsView.swift in Sources */,

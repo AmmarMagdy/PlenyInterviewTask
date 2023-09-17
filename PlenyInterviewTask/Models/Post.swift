@@ -11,5 +11,5 @@ struct Post: Codable {
     let id: Int
     let title, body: String
     let userId, reactions: Int
-    let tags: [String]
+    let tags: [String]?
 }

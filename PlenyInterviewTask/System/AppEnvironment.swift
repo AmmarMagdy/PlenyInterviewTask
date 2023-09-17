@@ -19,7 +19,8 @@ extension AppEnvironment {
     static func bootstrap() -> AppEnvironment {
         let apiClient = URLSessionAPIClient()
         let webRepositories = configuredWebRepositories(apiClient: apiClient)
-        let services = configuredServices(webRepositories: webRepositories)
+        let dbRepositories = configuredDBRepositories()
+        let services = configuredServices(webRepositories: webRepositories, dbRepositories: dbRepositories)
         let viewModels = configuredViewModels(services: services)
         let diContainer = DIContainer(services: services, viewModels: viewModels)
         return AppEnvironment(container: diContainer)
@@ -31,9 +32,14 @@ extension AppEnvironment {
         return .init(loginRepository: loginRepository, postsRepository: postsRepository)
     }
     
-    private static func configuredServices(webRepositories: DIContainer.WebRepositories) -> DIContainer.Services {
+    private static func configuredDBRepositories() -> DIContainer.DBRepositories {
+        let postsDBRepository = PostsDBRepository()
+        return .init(postsDBRepository: postsDBRepository)
+    }
+    
+    private static func configuredServices(webRepositories: DIContainer.WebRepositories, dbRepositories: DIContainer.DBRepositories) -> DIContainer.Services {
         let loginService = LoginService(repository: webRepositories.loginRepository)
-        let postsService = PostsService(repository: webRepositories.postsRepository)
+        let postsService = PostsService(repository: webRepositories.postsRepository, dbRepository: dbRepositories.postsDBRepository)
         return .init(loginService: loginService, postsService: postsService)
     }
     
@@ -48,5 +54,9 @@ extension DIContainer {
     struct WebRepositories {
         let loginRepository: LoginRepositoryProtocol
         let postsRepository: PostsRepositoryProtocol
+    }
+    
+    struct DBRepositories {
+        let postsDBRepository: PostsDBRepositoryProtocol
     }
 }
