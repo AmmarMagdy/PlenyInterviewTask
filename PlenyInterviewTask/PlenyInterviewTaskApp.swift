@@ -11,9 +11,12 @@ import SwiftUI
 struct PlenyInterviewTaskApp: App {
     
     var body: some Scene {
-
         WindowGroup {
-            LoginCoordinator().view()
+            if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+                TabsCoordinator().view()
+            } else {
+                LoginCoordinator().view()
+            }
         }
     }
 }

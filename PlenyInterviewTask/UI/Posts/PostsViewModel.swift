@@ -24,7 +24,7 @@ class PostsViewModel: ObservableObject {
             saveIntialPosts()
         }
     }
-    private var dataIsLoading = false
+    var dataIsLoading = false
     
     
     init(service: PostsServiceProtocol) {
@@ -54,7 +54,8 @@ class PostsViewModel: ObservableObject {
     }
     
     private func handlePostListener(publisher: AnyPublisher<PostsList, Error>) {
-        publisher.receive(on: DispatchQueue.main)
+        publisher
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard let self = self else { return }
                 self.showProgressView = false

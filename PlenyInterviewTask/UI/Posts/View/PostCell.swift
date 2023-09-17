@@ -10,56 +10,50 @@ import SwiftUI
 struct PostCell: View {
     
     @ObservedObject var viewModel: PostViewModel
+    @State private var showingSheet = false
     
     var body: some View {
         VStack {
             userView
-            
             Text(viewModel.post?.body ?? "")
                 .font(.sfProDisplay(.regular, size: 17))
                 .foregroundColor(Color.gray())
-            
             imagesList
         }
-        .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.top)
     }
     
     var userView: some View {
         HStack {
-            Image("postProfile")
-                .resizable()
+            FullScreenImage(Image("postProfile"))
                 .scaledToFill()
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
             
-            VStack {
+            VStack(alignment: .leading, spacing: 4) {
                 Text("Neama Ahmed")
                     .font(.sfProDisplay(.regular, size: 17))
                     .foregroundColor(Color.gray())
                 
                 Text("2 days ago")
+                    .frame(alignment: .leading)
                     .foregroundColor(Color.gray())
                     .font(.sfProDisplay(.regular, size: 13))
             }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, 10)
+        }.frame(maxWidth: .infinity, alignment: .leading)
     }
     
     var imagesList: some View {
         HStack(spacing: 5) {
-            Image("item3")
-                .resizable()
+            FullScreenImage(Image("item3"))
                 .frame(width: 185, height: 345)
+            
             VStack(spacing: 5) {
-                Image("item1")
-                    .resizable()
+                FullScreenImage(Image("item1"))
                     .frame(width: 185, height: 170)
                     .scaledToFill()
-                Image("item2")
-                    .resizable()
+                
+                FullScreenImage(Image("item2"))
                     .frame(width: 185, height: 170)
             }
         }

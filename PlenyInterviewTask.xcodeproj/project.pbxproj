@@ -40,6 +40,8 @@
 		A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */; };
 		A04AE1AC2AB4E0DE00138A2B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */; };
 		A04AE1B22AB5029600138A2B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AE1B12AB5029600138A2B /* ErrorView.swift */; };
+		A09638A72AB759D0002810CE /* FullScreenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09638A62AB759D0002810CE /* FullScreenImage.swift */; };
+		A09638A92AB75A02002810CE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09638A82AB75A02002810CE /* UIApplication+Extension.swift */; };
 		FC0F94892AB5EE01000FEB15 /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */; };
 		FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */; };
 		FC3246AE2AB60C1400832754 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3246AD2AB60C1400832754 /* PostsViewModel.swift */; };
@@ -86,6 +88,8 @@
 		A04AE1A32AB4A9DC00138A2B /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		A04AE1AB2AB4E0DE00138A2B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A04AE1B12AB5029600138A2B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A09638A62AB759D0002810CE /* FullScreenImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImage.swift; sourceTree = "<group>"; };
+		A09638A82AB75A02002810CE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FC0F94882AB5EE01000FEB15 /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
 		FC0F948C2AB5EE5D000FEB15 /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
 		FC3246AD2AB60C1400832754 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			children = (
 				A04AE16F2AB3274000138A2B /* Fonts+Extension.swift */,
 				A04AE1712AB327E200138A2B /* Colors+Extension.swift */,
+				A09638A82AB75A02002810CE /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				A04AE1742AB3472D00138A2B /* CustomInputView.swift */,
 				A04AE1762AB36A5800138A2B /* SecureInputView.swift */,
 				A04AE1B12AB5029600138A2B /* ErrorView.swift */,
+				A09638A62AB759D0002810CE /* FullScreenImage.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 			files = (
 				A04AE1772AB36A5800138A2B /* SecureInputView.swift in Sources */,
 				FCF5D7492AB665A80076041B /* PostsDBRepository.swift in Sources */,
+				A09638A72AB759D0002810CE /* FullScreenImage.swift in Sources */,
 				FCF5D74B2AB6698A0076041B /* Posts+CoreData.swift in Sources */,
 				A00D711B2AB53CC20035B2F6 /* Post.swift in Sources */,
 				A04AE1A52AB4A9DC00138A2B /* Endpoint.swift in Sources */,
@@ -490,6 +497,7 @@
 				A00D711D2AB53CE40035B2F6 /* PostsList.swift in Sources */,
 				A04AE1722AB327E200138A2B /* Colors+Extension.swift in Sources */,
 				FC0F948D2AB5EE5D000FEB15 /* TabsCoordinator.swift in Sources */,
+				A09638A92AB75A02002810CE /* UIApplication+Extension.swift in Sources */,
 				A04AE19A2AB4A52600138A2B /* AppEnvironment.swift in Sources */,
 				A04AE19E2AB4A9C200138A2B /* APIManager.swift in Sources */,
 				A04AE1A62AB4A9DC00138A2B /* HTTPMethods.swift in Sources */,

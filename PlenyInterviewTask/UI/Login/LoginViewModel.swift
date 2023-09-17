@@ -41,6 +41,7 @@ class LoginViewModel: ObservableObject {
                 }
             } receiveValue: { user in
                 print(user)
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
             }.store(in: &cancellables)
     }
     

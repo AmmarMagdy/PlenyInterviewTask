@@ -10,27 +10,21 @@ import SwiftUI
 struct PostView: View {
     
     @ObservedObject var viewModel: PostsViewModel
-    
     @State private var text: String = ""
     @State private var showTextField: Bool = false
     
     var body: some View {
         VStack {
             headerView
-            Divider().padding(.bottom, 8)
-            ScrollView {
-                LazyVStack {
-                    ForEach(0..<viewModel.items.count, id: \.self) { index in
-                        PostCell(post: viewModel.post(at: index))
-                            .onAppear() {
-                                viewModel.loadMoreContent(post: viewModel.post(at: index))
-                            }
-                        Divider()
-                    }
-                }
-                if viewModel.showProgressView {
-                    ProgressView()
-                }
+            Divider()
+            if viewModel.dataIsLoading, viewModel.items.count == 0 {
+                Spacer()
+                ProgressView()
+                Spacer()
+            } else if viewModel.items.count > 0 {
+                list
+            } else {
+                noItems
             }
         }.onAppear() {
             viewModel.getIntialPosts()
@@ -40,7 +34,7 @@ struct PostView: View {
     var headerView: some View {
         ZStack {
             if showTextField {
-               searchBar
+                searchBar
             } else {
                 HStack {
                     Image("logo")
@@ -56,7 +50,7 @@ struct PostView: View {
                             .padding(8)
                     }
                 }.padding(.horizontal)
-                .frame(height: 40)
+                    .frame(height: 40)
             }
         }
     }
@@ -72,8 +66,10 @@ struct PostView: View {
             }
             Button {
                 withAnimation(.easeInOut(duration: 0.2)) {
-                    text = ""
-                    viewModel.getIntialPosts()
+                    if text != "" {
+                        text = ""
+                        viewModel.getIntialPosts()
+                    }
                     showTextField.toggle()
                 }
             } label: {
@@ -82,11 +78,42 @@ struct PostView: View {
                     .frame(width: 24, height: 24)
                     .padding(8)
             }
-        }.frame(height: 40)
-        .overlay(
+        }.frame(height: 40).overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.borderColor(), lineWidth: 1)
-        ).frame(height: 40).padding(.horizontal)
+                .stroke(Color.borderColor(), lineWidth: 1))
+        .frame(height: 40).padding(.horizontal)
+    }
+    
+    var noItems: some View {
+        VStack {
+            Spacer()
+            VStack(alignment: .center) {
+                Text("No Items")
+                    .font(.sfProDisplay(.bold, size: 20))
+                    .foregroundColor(.gray())
+            }
+            Spacer()
+        }
+    }
+    
+    var list: some View {
+        VStack {
+            List {
+                ForEach(0..<viewModel.items.count, id: \.self) { index in
+                    PostCell(post: viewModel.post(at: index))
+                        .onAppear() {
+                            viewModel.loadMoreContent(post: viewModel.post(at: index))
+                        }
+                }
+            }
+            .listStyle(.plain)
+            .refreshable {
+                viewModel.getIntialPosts()
+            }
+            if viewModel.showProgressView {
+                ProgressView()
+            }
+        }
     }
 }
 
